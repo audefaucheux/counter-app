@@ -1,30 +1,42 @@
 import React from 'react';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import Counter from './Counter'
 import './App.css';
+
+const initialState = {
+  count: 0
+}
+
+// decides what to update depending on the action type
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return {
+        count: state.count + 1
+      };
+    case "DECREMENT":
+      return {
+        count: state.count - 1
+      };
+    default: 
+      return state
+  }
+}
+
+// store the states
+const store = createStore(reducer);
 
 class App extends React.Component {
 
-  state = {
-    count: 0,
-  }
-
-  decrement = () => {
-    this.setState({count: this.state.count - 1})
-  }
-
-  increment = () => {
-    this.setState({count: this.state.count + 1})
-  }
-
   render() {
     return (
-    <div className="App">
-      <p>Counter</p>
-      <div className="counter">
-        <button onClick={this.decrement}>-</button>
-        <div className="count">{this.state.count}</div>
-        <button onClick={this.increment}>+</button>
+   <Provider store={store}>
+      <div className="App">
+        <Counter />
       </div>
-    </div>
+   </Provider>
   );}
 }
 
