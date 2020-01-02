@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-    REFRESH_TIME,
-  } from './actions'
-
+import { refreshTime } from "./actions";
 
 class Clock extends Component {
-
   updateTime = () => {
-    this.props.dispatch({type: REFRESH_TIME})
+    this.props.refreshTime();
   };
 
   render() {
@@ -23,7 +19,11 @@ class Clock extends Component {
 }
 
 const mapStateToProps = state => ({
-    time: state.time
-})
+  time: state.time
+});
 
-export default connect(mapStateToProps)(Clock);
+const mapDispatchToProps = {
+  refreshTime
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clock);
