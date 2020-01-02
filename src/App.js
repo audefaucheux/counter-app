@@ -51,6 +51,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <h1>This app is to practise using Redux</h1>
           <Counter />
           <br />
           <Clock />
