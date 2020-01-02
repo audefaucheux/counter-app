@@ -1,6 +1,7 @@
 import React from "react";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import Counter from "./Counter";
 import Clock from "./Clock";
@@ -44,7 +45,11 @@ const reducer = (state = initialState, action) => {
 };
 
 // store the states
-const store = createStore(reducer);
+const store = createStore(
+  reducer,
+  initialState,
+  composeWithDevTools(),
+);
 
 class App extends React.Component {
   render() {
