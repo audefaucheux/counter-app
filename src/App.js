@@ -5,15 +5,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import Counter from "./Counter";
 import Clock from "./Clock";
-import { 
-  reducer,
-  initialState,
-} from './reducer'
+import { reducer, initialState } from "./reducer";
 import "./App.css";
 
 // store the states
 const store = createStore(reducer, initialState, composeWithDevTools());
 
+console.log("hello world");
 class App extends React.Component {
   render() {
     return (
