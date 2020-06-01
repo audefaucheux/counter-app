@@ -11,7 +11,7 @@ import "./App.css";
 // store the states
 const store = createStore(reducer, initialState, composeWithDevTools());
 
-console.log("hello world again..");
+console.log("test");
 class App extends React.Component {
   render() {
     return (
