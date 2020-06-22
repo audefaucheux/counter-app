@@ -8,14 +8,9 @@ jobs:
         uses: actions/checkout@master
       - name: Install
         run: yarn
-      - name: Cypress run
-        uses: cypress-io/github-action@v1
+      - name: Percy Test
+        uses: percy/exec-action@v0.1.1
         with:
-          install: false
-          start: npm start
-          wait-on: http://localhost:3000
-          record: true
-          parallel: true
-          command-prefix: "percy exec -- npx"
+          command: "cypress run"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
