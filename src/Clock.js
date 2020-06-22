@@ -18,12 +18,12 @@ class Clock extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  time: state.time
+const mapStateToProps = (state) => ({
+  time: state.time,
 });
 
 const mapDispatchToProps = {
-  refreshTime
+  refreshTime,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Clock);

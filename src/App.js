@@ -5,13 +5,9 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import Counter from "./Counter";
 import Clock from "./Clock";
-import { 
-  reducer,
-  initialState,
-} from './reducer'
+import { reducer, initialState } from "./reducer";
 import "./App.css";
 
-// store the states
 const store = createStore(reducer, initialState, composeWithDevTools());
 
 class App extends React.Component {
@@ -19,7 +15,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>This app is to practise using Redux</h1>
+          <h1>A Useless App</h1>
           <Counter />
           <br />
           <Clock />

@@ -18,9 +18,13 @@ class Counter extends React.Component {
       <>
         <h2>Counter</h2>
         <div className="counter">
-          <button onClick={this.decrement}>-</button>
+          <button onClick={this.decrement} className="counter-button">
+            -
+          </button>
           <div className="count">{this.props.count}</div>
-          <button onClick={this.increment}>+</button>
+          <button onClick={this.increment} className="counter-button">
+            +
+          </button>
         </div>
       </>
     );
@@ -28,14 +32,14 @@ class Counter extends React.Component {
 }
 
 // get state and pass it down as component props
-const mapStateToProps = state => ({
-  count: state.count
+const mapStateToProps = (state) => ({
+  count: state.count,
 });
 
 // actions creators passed down as props
 const mapDispatchToProps = {
   increment,
-  decrement
+  decrement,
 };
 
 // connect component to redux
