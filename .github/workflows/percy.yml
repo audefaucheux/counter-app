@@ -13,7 +13,7 @@ jobs:
         with:
           install: false
           start: npm start
-          wait-on: "http://localhost:3000"
+          wait-on: http://localhost:3000
           record: true
           parallel: true
           command-prefix: "percy exec -- npx"
