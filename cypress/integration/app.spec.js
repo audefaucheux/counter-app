@@ -4,6 +4,7 @@ describe("Visits the counter app", () => {
     cy.contains("A Useless App");
     cy.contains("Counter");
     cy.contains("Clock");
+    cy.percySnapshot();
   });
 
   it("increments the counter", () => {
