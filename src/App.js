@@ -16,9 +16,11 @@ class App extends React.Component {
       <Provider store={store}>
         <div className="App">
           <h1>A Useless App</h1>
-          <Counter />
-          <br />
-          <Clock />
+          <div className="app-container">
+            <Counter />
+            <br />
+            <Clock />
+          </div>
         </div>
       </Provider>
     );
