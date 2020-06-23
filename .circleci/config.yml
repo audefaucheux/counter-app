@@ -13,11 +13,6 @@ jobs:
             - run: npm install
             - run: npm test
 
-  cypress/run:
-    steps:
-      - checkout
-      - run: cypress/run
-
 workflows:
   build-and-test:
     jobs:
