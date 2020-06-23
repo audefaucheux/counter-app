@@ -11,6 +11,9 @@ jobs:
       - name: Percy Test
         uses: percy/exec-action@v0.1.1
         with:
+          build: npm run build
+          start: npm start
+          wait-on: "http://localhost:3000"
           command: "cypress run"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
