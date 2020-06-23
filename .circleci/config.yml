@@ -19,4 +19,4 @@ workflows:
       - build-and-test
       - cypress/run:
         start: npm start
-        wait-on: "http://localhost:3003"
+        wait-on: "http://localhost:3000"
