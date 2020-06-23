@@ -15,6 +15,7 @@ jobs:
 
   cypress/run:
     steps:
+      - checkout
       - run: cypress/run
 
 workflows:
