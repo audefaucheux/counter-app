@@ -2,7 +2,6 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
   cypress: cypress-io/cypress@1.24.0
-  percy: percy/agent@0.1.2
 jobs:
   build-and-test:
     executor:
@@ -21,6 +20,4 @@ workflows:
       - cypress/run:
           start: npm start
           wait-on: "http://localhost:3000"
-      - percy/finalize_all:
-        requires:
-          - build-and-test
+          run: percy exec -- cypress run
