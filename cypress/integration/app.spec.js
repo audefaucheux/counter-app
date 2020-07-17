@@ -1,6 +1,6 @@
 describe("Visits the counter app", () => {
   it("loads the home page", () => {
-    cy.visit("http://localhost:3000/");
+    cy.visit("/");
     cy.contains("A Useless App");
     cy.contains("Counter");
     cy.contains("Clock");
